@@ -11,7 +11,7 @@
 
 /* Make the image to responsive */
 .movie-poster {
-  display: block;
+  display: inline-block;
   width: 100%;
   height: auto;
 }
@@ -26,11 +26,10 @@
   color: #f1f1f1;
   width: 100%;
   transition: .5s ease;
-  opacity: 0;
+  opacity: 1;
   color: white;
   font-size: 20px;
   padding: 20px;
-  text-align: center;
 }
 
 /* When you mouse over the container, fade in the overlay title */
