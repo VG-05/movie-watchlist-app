@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./movie-card.css";
 
-export default function MovieCard({ movieName, posterUrl, bookmarked, setBookmarked }) {
+export default function MovieCard({ movieName, posterUrl }) {
+    const [bookmarked, setBookmarked] = useState(false);
     return (
         <div className="col-lg-2 col-md-3 col-sm-4 col-6 p-0">
             <div className="card text-bg-dark border-0" id="movie-card">
