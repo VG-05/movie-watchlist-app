@@ -27,7 +27,9 @@ export default function App() {
         })}
         </div>
       </div>
-      <button id="load-more-button" class="btn btn-outline-light" type="button" title="Load more movies" onClick={handleLoadMore}>Load More</button>
+      <div className="d-flex justify-content-center">
+        <button class="btn btn-outline-light my-5" type="button" title="Load more movies" onClick={handleLoadMore}>Load More</button>
+      </div>
     </div>
   )
 }
