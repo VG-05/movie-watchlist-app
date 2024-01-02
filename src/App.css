@@ -1,7 +1,7 @@
-#movie-card:hover #bookmark-button {
-  opacity: 1;
-}
-
-#bookmark-button {
-  opacity: 0;
+#load-more-button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  display: block;
 }
