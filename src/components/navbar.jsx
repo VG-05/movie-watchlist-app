@@ -1,4 +1,4 @@
-import "C:/Users/vishe/OneDrive - University of Waterloo/Desktop/movie watchlist app/src/App.css";
+
 
 
 export default function Navbar() {
