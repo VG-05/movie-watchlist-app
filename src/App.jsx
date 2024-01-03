@@ -2,12 +2,14 @@ import { useEffect, useState } from "react"
 import MovieCard from "./components/movie-card"
 import Navbar from "./components/navbar"
 import "./App.css"
+import Watchlist from "./components/watchlist";
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [bookmarked, setBookmarked] = useState(JSON.parse(localStorage.getItem("bookmarkedMovies")) || {});
+  const apiKey = import.meta.env.VITE_API_KEY;
 
-  let url = `https://api.themoviedb.org/3/discover/movie?api_key=d1c9e7f242991749c4f5c56cc8c8a7e8&page=${currentPage}`;
+  let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currentPage}`;
   useEffect(() => {
 
     fetch(url).then(res => res.json())
@@ -40,6 +42,12 @@ export default function App() {
   }, [bookmarked])
 
   return (
+    <Watchlist bookmarked={bookmarked} toggleBookmark={toggleBookmark} />
+  )
+
+
+
+  /*return (
     <div className="bg-black">
       <Navbar />
       <div className="container-lg p-0 my-3">
@@ -58,5 +66,8 @@ export default function App() {
       </div>
     </div>
   )
+  */
+
+
 }
 
