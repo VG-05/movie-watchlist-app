@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "./navbar";
 import MovieCard from "./movie-card";
 
 export default function Watchlist({ bookmarked, toggleBookmark }) {
@@ -24,8 +23,7 @@ export default function Watchlist({ bookmarked, toggleBookmark }) {
 
 
     return (
-        <div>
-            <Navbar />
+        <>
             <div className="container-lg p-0 my-3">
                 <div className="row">
                     {
@@ -38,7 +36,7 @@ export default function Watchlist({ bookmarked, toggleBookmark }) {
                         )}
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

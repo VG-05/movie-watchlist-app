@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react"
-import MovieCard from "./components/movie-card"
-import Navbar from "./components/navbar"
 import "./App.css"
-import Watchlist from "./components/watchlist";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import WatchlistPage from "./pages/WatchlistPage";
+import HomePage from "./pages/HomePage";
+
+
+
 export default function App() {
+
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [bookmarked, setBookmarked] = useState(JSON.parse(localStorage.getItem("bookmarkedMovies")) || {});
@@ -11,7 +15,6 @@ export default function App() {
 
   let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currentPage}`;
   useEffect(() => {
-
     fetch(url).then(res => res.json())
       .then(data => {
         if (currentPage === 1) {
@@ -27,9 +30,7 @@ export default function App() {
       .catch(err => console.error("Error fetching data: ", err))
   }, [url, currentPage])
 
-  function handleLoadMore() {
-    setCurrentPage(prevPage => prevPage + 1);
-  }
+
 
   function toggleBookmark(movieID) {
     setBookmarked(prevState => ({
@@ -41,35 +42,22 @@ export default function App() {
     localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarked))
   }, [bookmarked])
 
-  /*return (
-    <Watchlist bookmarked={bookmarked} toggleBookmark={toggleBookmark} />
-  )
-  */
-
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage movies={movies} bookmarked={bookmarked} toggleBookmark={toggleBookmark} setCurrentPage={setCurrentPage} />
+    },
+    {
+      path: "/watchlist",
+      element: <WatchlistPage bookmarked={bookmarked} toggleBookmark={toggleBookmark} />
+    }
+  ]);
 
 
   return (
-    <div>
-      <Navbar />
-      <div className="container-lg p-0 my-3">
-        <div className="row">
-          {movies.map((movie) => {
-            return <MovieCard key={movie.id} movieName={movie.title}
-              posterUrl={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              isBookmarked={bookmarked[movie.id]}
-              toggleBookmark={() => toggleBookmark(movie.id)} />
-          }
-          )}
-        </div>
-      </div>
-      <div className="d-flex justify-content-center">
-        <button className="btn btn-outline-light my-5" type="button" title="Load more movies" onClick={handleLoadMore}>Load More</button>
-      </div>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   )
-
-
-
-
 }
 
