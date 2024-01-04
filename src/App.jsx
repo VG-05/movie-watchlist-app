@@ -41,14 +41,15 @@ export default function App() {
     localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarked))
   }, [bookmarked])
 
-  return (
+  /*return (
     <Watchlist bookmarked={bookmarked} toggleBookmark={toggleBookmark} />
   )
+  */
 
 
 
-  /*return (
-    <div className="bg-black">
+  return (
+    <div>
       <Navbar />
       <div className="container-lg p-0 my-3">
         <div className="row">
@@ -66,7 +67,8 @@ export default function App() {
       </div>
     </div>
   )
-  */
+
+
 
 
 }

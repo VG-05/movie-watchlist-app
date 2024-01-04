@@ -24,7 +24,7 @@ export default function Watchlist({ bookmarked, toggleBookmark }) {
 
 
     return (
-        <div className="bg-black">
+        <div>
             <Navbar />
             <div className="container-lg p-0 my-3">
                 <div className="row">
