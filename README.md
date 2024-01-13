@@ -1,11 +1,11 @@
-## Film Explorer Web Application
+# Film Explorer Web Application
 
 A web application for tracking and managing your favourite movies
 
-# About The Project
+## About The Project
 This web app is designed to help users keep track of movies they want to watch. Users can add, remove, and mark movies as watched. The application provides a clean and intuitive interface for managing your movie preferences. 
 
-# Built With
+## Built With
 1. HTML
 2. CSS
 3. JavaScript
@@ -13,17 +13,17 @@ This web app is designed to help users keep track of movies they want to watch. 
 5. Bootstrap
 6. TMdB API
 
-# Getting Started
+## Getting Started
 
-# Prerequisites
+### Prerequisites
 Make sure you have Node.js and npm installed on your local machine
 
-# Usage
+### Usage
 1. Open the app in your browser
 2. Add movies to your watchlist by entering the movie title.
 3. Remove them from the list when you finish watching them
 
-# Features
+## Features
 1. Add movies to the watchlist
 2. Remove movies from the watchlist
 3. Click the "Load More" button to fetch more movies from the api and display them
