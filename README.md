@@ -29,7 +29,7 @@ Make sure you have Node.js and npm installed on your local machine
 3. Click the "Load More" button to fetch more movies from the api and display them
 4. Use the Navbar to navigate between Home page and your watchlist
 
-# Roadmap
+## Roadmap
 1. Add a search and filter feature to find specific movies based on name, genre, etc.
 2. Display the rating for each movie
 
