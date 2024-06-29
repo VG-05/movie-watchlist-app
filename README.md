@@ -19,7 +19,7 @@ This web app is designed to help users keep track of movies they want to watch. 
 Make sure you have Node.js and npm installed on your local machine
 
 ### Usage
-1. Open the app in your browser
+1. Open the [app](https://vg-05.github.io/movie-watchlist-app/) in your browser
 2. Add movies to your watchlist by entering the movie title.
 3. Remove them from the list when you finish watching them
 
