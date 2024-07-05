@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "./App.css"
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchlistPage from "./pages/WatchlistPage";
 import HomePage from "./pages/HomePage";
 
@@ -42,7 +42,7 @@ export default function App() {
     localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarked))
   }, [bookmarked])
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage movies={movies} bookmarked={bookmarked} toggleBookmark={toggleBookmark} setCurrentPage={setCurrentPage} />
@@ -50,6 +50,9 @@ export default function App() {
     {
       path: "/watchlist",
       element: <WatchlistPage bookmarked={bookmarked} toggleBookmark={toggleBookmark} />
+    },
+    { 
+      basename: import.meta.env.DEV ? '/' : '/movie-watchlist-app/'
     }
   ]);
 
